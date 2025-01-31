@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package model.boid;
+
+// each message gets its own class
+option java_multiple_files = true;
+// proper package name otherwise uses uu.boid
+option java_package = "nl.uu.model.boid";
+
+message Rule {
+  string head = 1;
+  string complement = 2;
+  BoidType rule_type = 3;
+}
+
+enum BoidType {
+  BELIEF = 0;
+  OBLIGATION = 1;
+  INTENTION = 2;
+  DESIRE = 3;
+}

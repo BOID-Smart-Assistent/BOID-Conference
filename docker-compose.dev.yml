@@ -1,0 +1,50 @@
+services:
+  database:
+    extends:
+      file: api/docker-compose.dev.yml
+      service: database
+    container_name: boid-database
+    networks:
+      - boid
+  api:
+    extends:
+      file: api/docker-compose.dev.yml
+      service: backend
+    container_name: boid-api
+    networks:
+      - boid
+  llm:
+   extends:
+     file: llm/docker-compose.dev.yml
+     service: llm
+   container_name: boid-llm
+   depends_on:
+     - api
+     - ollama
+   networks:
+     - boid
+   restart: unless-stopped
+  ollama:
+    extends:
+      file: llm/docker-compose.dev.yml
+      service: ollama
+    container_name: boid-ollama
+    networks:
+      - boid
+  algorithm:
+    extends:
+      file: algorithm/docker-compose.dev.yml
+      service: boid-algorithm
+    container_name: boid-algorithm
+    depends_on:
+      - api
+      - llm
+    networks:
+      - boid
+
+
+networks:
+  boid:
+
+volumes:
+  db-data:

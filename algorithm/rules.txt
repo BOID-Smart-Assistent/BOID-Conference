@@ -1,0 +1,12 @@
+presentation_6 -B-> timeslot_1_6
+presentation_5 -B-> timeslot_1_5
+true -O-> presentation_6
+true -D-> presentation_5
+presentation_8 -B-> timeslot_2_8
+presentation_7 -B-> timeslot_2_7
+true -D-> presentation_8
+true -D-> presentation_7
+presentation_9 -B-> timeslot_3_9
+presentation_10 -B-> timeslot_3_10
+true -O-> presentation_9
+true -O-> presentation_10
