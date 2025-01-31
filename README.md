@@ -4,6 +4,9 @@ providing advanced reasoning capabilities supported by an LLM (Large Language Mo
 The repository is structured as a collection of submodules that can function independently or 
 integrate seamlessly in a unified environment through Docker.
 
+## Example
+In the appendix you can find a figure that illustrates an example of a process tree that the BOID algorithm generates. The tree structure demonstrates how different scheduling decisions are made based on prioritized rules, showing multiple possible extensions that align with the agent's obligations and desires. [Link](appendix/example.pdf)
+
 ## Features
 
 - API: Provides a RESTful interface and frontend to interact with the BOID system.
